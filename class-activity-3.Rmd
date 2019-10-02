@@ -2,7 +2,9 @@
 title: "class activity 3"
 author: "Charles Lang"
 date: "10/2/2018"
-output: html_document
+output:
+  html_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #Mapping aesthetic to data to = layer
 ```{r}
-install.packages("ggplot2")
+#install.packages("ggplot2")
 library(ggplot2)
 
 ggplot(diamonds, aes(x = price, y = carat)) +
@@ -60,6 +62,14 @@ If you would like to recreate the Minard graphic of Napoleon's Troops the code i
 
 ```{r}
 
+cities <- read.csv("~/tmp/class-activity-2/class-activity-3/cities.txt", sep="")
+  View(cities)
+troops <- read.csv("~/tmp/class-activity-2/class-activity-3/troops.txt", sep="")
+  View(troops)
+temps <- read.csv("~/tmp/class-activity-2/class-activity-3/temps.txt", sep="")
+  View(temps)
+
+  
 ggplot(cities, aes(long, lat)) +
   geom_path(aes(size = survivors, 
                 colour = direction,
